@@ -1,3 +1,7 @@
+/**
+ * Player
+ * Třída reprezentujíí hráče v aktuální hře
+ */
 #ifndef _PLAYER_HPP
 #define _PLAYER_HPP
 
@@ -6,8 +10,8 @@
 
 class Player {
     // *** Atributy
-    std::string _name;
-    char _symbol;
+    std::string _name;  // jméno hráče
+    char _symbol;       // znak, který repreznetuje hráče na hrací ploše
 
     // *** Konstruktor
     public:
@@ -19,6 +23,7 @@ class Player {
         const char getSymbol() const;
 };
 
+// *** Operátory
 std::ostream& operator<<(std::ostream&, Player&);
 
 #endif

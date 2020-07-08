@@ -1,3 +1,8 @@
+/**
+ * Board
+ * Třída reprezentuící hrací plochu. Uchovávává pozici jednotlivých kamenů a umožňuje jejich vložení.
+ */
+
 #ifndef _BOARD_HPP
 #define _BOARD_HPP
 
@@ -5,8 +10,8 @@
 
 class Board {
     // *** Atributy
-    int _width, _height;
-    Stone** _stones;
+    int _width, _height;    // šířka (počet sloupců) a výška (počet řádků) hrací plochy
+    Stone** _stones;        // kolekce vložených kamenů
 
     // *** Konstruktor, destruktor
     public:
@@ -25,7 +30,9 @@ class Board {
 
     // *** Metody
     private:
+        // metoda pro kontrolu rozměrů hrací plochy
         bool checkDimension(const int width, const int height);
+        // metoda pro kontrolu pozice na hrací ploše
         bool checkPosition(const int x, const int y) const;
 };
 

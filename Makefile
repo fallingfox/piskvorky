@@ -6,3 +6,13 @@ stone.o: piskvorky/stone.cpp
 
 board.o: piskvorky/board.cpp
 	g++ -c piskvorky/board.cpp -o bin/board.o
+
+piskvorky.o: piskvorky/piskvorky.cpp
+	g++ -c piskvorky/piskvorky.cpp -o bin/piskvorky.o
+
+
+build: player.o stone.o board.o piskvorky.o
+	g++ bin/* -o piskvorky.run
+
+clean:
+	rm bin/*

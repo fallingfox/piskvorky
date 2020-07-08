@@ -1,3 +1,8 @@
+/**
+ * Stone
+ * Reprezentace hracího kamene daného hráče.
+ */
+
 #ifndef _STONE_HPP
 #define _STONE_HPP
 
@@ -5,8 +10,8 @@
 #include "player.hpp"
 
 class Stone {
-    // ** Atributy
-    Player* _player;
+    // *** Atributy
+    Player* _player;    // hráč, který vlastní kámen
 
     // *** Konstruktor
     public:
@@ -17,6 +22,7 @@ class Stone {
         Player* getPlayer() const;
 };
 
+// *** Operátory
 std::ostream& operator<<(std::ostream&, Stone&);
 
 #endif
