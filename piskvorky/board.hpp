@@ -6,6 +6,7 @@
 #ifndef _BOARD_HPP
 #define _BOARD_HPP
 
+#include <ostream>
 #include "stone.hpp"
 
 class Board {
@@ -35,5 +36,7 @@ class Board {
         // metoda pro kontrolu pozice na hrací ploše
         bool checkPosition(const int x, const int y) const;
 };
+
+std::ostream& operator<<(std::ostream&, Board&);
 
 #endif

@@ -10,8 +10,11 @@ board.o: piskvorky/board.cpp
 piskvorky.o: piskvorky/piskvorky.cpp
 	g++ -c piskvorky/piskvorky.cpp -o bin/piskvorky.o
 
+main.o: main.cpp
+	g++ -c main.cpp -o bin/main.o
 
-build: player.o stone.o board.o piskvorky.o
+
+build: player.o stone.o board.o piskvorky.o main.o
 	g++ bin/* -o piskvorky.run
 
 clean:

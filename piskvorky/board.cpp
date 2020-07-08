@@ -45,3 +45,16 @@ bool Board::checkDimension(const int width, const int height) {
 bool Board::checkPosition(const int x, const int y) const {
     return (x >= 0 && x < _width && y >= 0 && y < _height);
 }
+
+// Operátory
+std::ostream& operator<<(std::ostream& output, Board& board) {
+    for (int y = 0, h = board.getHeight(); y < h; y++) {
+        for (int x = 0, w = board.getWidth(); x < w; x++) {
+            Stone* s = board.getStone(x, y);
+            if (s != nullptr) output << *s;
+            else output << ' ';
+        }
+        output << std::endl;
+    }
+    return output;
+}
