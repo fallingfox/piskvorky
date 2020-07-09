@@ -1,30 +1,27 @@
 #include <iostream>
 
+#include <SFML/Graphics.hpp>
 #include "piskvorky/piskvorky.hpp"
+#include "gui/gboard.hpp"
 
 #define WIDTH 10
 #define HEIGHT 10
 
 int main() {
-    Piskvorky p;
-    p.setBoard(new Board(WIDTH, HEIGHT));
-    Player* pl1 = new Player("Jakub", 'X');
-    Player* pl2 = new Player("Pindruse", 'O');
-    p.addPlayer(pl1);
-    p.addPlayer(pl2);
-    p.setWinSequence(5);
+    sf::RenderWindow _window(sf::VideoMode(600, 600), "Piškvorky");
+    Piskvorky game;
+    Board* board = new Board(10, 10);
 
-    p.getBoard()->setStone(1, 0, new Stone(pl2));
-    p.getBoard()->setStone(5, 0, new Stone(pl1));
-    p.getBoard()->setStone(4, 1, new Stone(pl1));
-    p.getBoard()->setStone(3, 2, new Stone(pl1));
-    p.getBoard()->setStone(2, 3, new Stone(pl1));
-    p.getBoard()->setStone(1, 4, new Stone(pl1));
+    while (_window.isOpen()) {
+        sf::Event event;
+        while(_window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                _window.close();
+        }
 
-    std::cout << (*p.getBoard()) << std::endl;
-
-    Player* winner = p.checkWinner();
-    if (winner != nullptr) std::cout << winner->getName();
-
+        _window.clear();
+        ((GBoard*) board)->draw(_window);
+        _window.display();
+    }
     return 0;
 }
