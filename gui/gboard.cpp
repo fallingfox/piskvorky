@@ -1,9 +1,5 @@
 #include "gboard.hpp"
 
-GBoard::GBoard(const int width, const int height) : Board(width, height) {}
-
-// GBoard::GBoard(const Board& board) : Board(board) {}
-
 void GBoard::draw(sf::RenderWindow& window) const {
     float pw = window.getSize().x / getWidth();
     float ph = window.getSize().y / getHeight();

@@ -7,10 +7,10 @@
 
 class Piskvorky {
     // *** Atributy
-    int _win_sequence;
-    Board* _board;
-    std::vector<Player*> _players;
+    Board* _board   = nullptr;
     Player* _winner = nullptr;
+    int _win_sequence;
+    std::vector<Player*> _players;
 
     // *** Konstruktor, destruktor
     public:
