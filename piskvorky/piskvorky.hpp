@@ -8,7 +8,6 @@
 class Piskvorky {
     // *** Atributy
     Board* _board   = nullptr;
-    Player* _winner = nullptr;
     int _win_sequence;
     std::vector<Player*> _players;
 

@@ -5,13 +5,9 @@
 #include "../piskvorky/stone.hpp"
 
 class GStone : public Stone {
-    // *** Konstruktor
-    public:
-        GStone(const Stone&);
-
     // *** Metody
     public:
-        void draw(sf::RenderWindow&) const;
+        void draw(const float x, const float y, const float size, sf::RenderWindow&) const;
 };
 
 
