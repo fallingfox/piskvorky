@@ -10,6 +10,7 @@ class Piskvorky {
     Board* _board   = nullptr;
     int _win_sequence;
     std::vector<Player*> _players;
+    int _playerIndex = 0;
 
     // *** Konstruktor, destruktor
     public:
@@ -31,6 +32,7 @@ class Piskvorky {
         void addPlayer(Player*);
         Player* checkWinner();
         Player* checkWinner(const int last_x, const int last_y);
+        Player* nextPlayer();
 };
 
 #endif

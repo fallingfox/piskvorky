@@ -103,3 +103,7 @@ Player* Piskvorky::checkWinner(const int last_x, const int last_y) {
     // TODO impl
     return nullptr;
 }
+
+Player* Piskvorky::nextPlayer() {
+    return _players[_playerIndex++ % 2];
+}
