@@ -23,7 +23,7 @@ class Piskvorky {
 
     // *** Settery
     public:
-        void setBoard(Board*);
+        void virtual setBoard(Board*);
         void setWinSequence(const int);
 
     // *** Metody

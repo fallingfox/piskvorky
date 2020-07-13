@@ -27,7 +27,7 @@ class Board {
 
     // *** Settery
     public:
-        void virtual setStone(const int x, const int y, Stone* stone);
+        void setStone(const int x, const int y, Stone* stone);
 
     // *** Metody
     private:

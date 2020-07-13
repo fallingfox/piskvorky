@@ -3,13 +3,20 @@
 
 #include <SFML/Graphics.hpp>
 #include "../piskvorky/piskvorky.hpp"
+#include "gboard.hpp"
 
 class GPiskvorky : public Piskvorky {
-    // *** Metody
-    void draw(sf::RenderWindow& window) const;
+    // *** Settery
+    public:
+        void setBoard(GBoard*);
+    private:
+        void setBoard(Board*) override;
 
-    
-}
+    // *** Metody
+    public:
+        void draw(sf::RenderWindow& window) const;
+        void resize(const sf::Vector2f& window_size);
+};
 
 
 #endif

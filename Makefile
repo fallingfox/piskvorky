@@ -16,10 +16,13 @@ bin/gboard.o: gui/gboard.cpp
 bin/piskvorky.o: piskvorky/piskvorky.cpp
 	g++ -c piskvorky/piskvorky.cpp -o bin/piskvorky.o
 
+bin/gpiskvorky.o: gui/gpiskvorky.cpp
+	g++ -c gui/gpiskvorky.cpp -o bin/gpiskvorky.o
+
 bin/main.o: main.cpp
 	g++ -c main.cpp -o bin/main.o
 
-build: bin/player.o bin/stone.o bin/gstone.o bin/board.o bin/gboard.o bin/piskvorky.o bin/main.o
+build: bin/player.o bin/stone.o bin/gstone.o bin/board.o bin/gboard.o bin/piskvorky.o bin/gpiskvorky.o bin/main.o
 	g++ bin/* -o piskvorky.run -lsfml-graphics -lsfml-window -lsfml-system
 
 clean:
