@@ -1,4 +1,5 @@
 #include <cmath>
+#include <iostream>
 #include "gboard.hpp"
 #include "gstone.hpp"
 
@@ -7,7 +8,9 @@ GBoard::GBoard(const int width, const int height) : Board(width, height) {}
 
 // Settery
 void GBoard::setStone(const int x, const int y, Stone* stone) {
-    
+    int row = std::floor((y - yOffset_) / tileSize_);
+    int column = std::floor((x - xOffset_) / tileSize_);
+    Board::setStone(column, row, stone);
 }
 
 // Metody

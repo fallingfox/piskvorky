@@ -17,9 +17,6 @@ int main() {
     game.addPlayer(p1);
     game.addPlayer(p2);
 
-    game.getBoard()->setStone(0, 0, new Stone(p1));
-    game.getBoard()->setStone(1, 0, new Stone(p2));
-
     game.resize({window.getSize().x * 1.0f, window.getSize().y * 1.0f});
 
     while (window.isOpen()) {
@@ -32,7 +29,7 @@ int main() {
                 window.setView(sf::View(rect));
                 game.resize({event.size.width * 1.0f, event.size.height * 1.0f});
             } else if (event.type == sf::Event::MouseButtonPressed) {
-                
+                reinterpret_cast<GBoard*>(game.getBoard())->setStone(event.mouseButton.x, event.mouseButton.y, new Stone(p1));
             }
         }
 
